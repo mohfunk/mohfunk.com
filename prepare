@@ -1,0 +1,30 @@
+#!/usr/bin/env node
+
+const {join} = require("path");
+const {readFileSync, writeFileSync} = require("fs");
+
+const init = () => {
+
+    const construct = (str) => {
+        const dir = join(__dirname, `./src/content/${str}/`);
+        const files = require("shelljs").ls(dir).stdout.split('\n').filter(s => s !== '');
+        const arr = [];
+        for (var i = 0; i < files.length; i++) {
+            const [ign, head, post] = readFileSync(join(dir, files[i]), (err, data) => data).toString().split('---').map(e => e.split('\n').filter((s) => s !== ''));
+            const [year, month, day] = head[0].split('.');
+            const [srid, name] = files[i].split('.').map(e => e.split('_').join(' '))
+            const [imp, label, copyrights, source, link] = head[1].split(' || ');
+            const impa = `assets/img/${imp}.${imp.split('/')[0]}`
+            arr.push({id: srid,title: name,date: {year, month, day},imag: {impa, label, copyrights, source, link},body: post});
+        }
+        return arr;
+    }
+    writeFileSync('src/content.yml', require("yaml").stringify(require("lodash").reverse({
+        home: { title: "mohfunk", sub: "Programmer and Game Developer"},
+        post: construct('post'),
+        work: construct('work'),
+        main: construct('main')
+    })));
+}
+
+init();

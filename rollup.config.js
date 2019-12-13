@@ -4,8 +4,12 @@ import commonjs from 'rollup-plugin-commonjs';
 import babel from 'rollup-plugin-babel';
 import yaml from '@rollup/plugin-yaml';
 import img from "@rollup/plugin-image";
-import md from 'rollup-plugin-md';
+import execute from 'rollup-plugin-execute'
+import path from 'path'
 
+import {
+    string
+} from "rollup-plugin-string";
 import {
     terser
 } from 'rollup-plugin-terser';
@@ -20,6 +24,9 @@ export default {
         format: 'iife',
     },
     plugins: [
+        execute([
+            './prepare'
+        ]),
         replace({
             'process.env.NODE_ENV': JSON.stringify(isProd ? 'production' : 'development'),
         }),
@@ -31,7 +38,9 @@ export default {
         }),
         yaml(),
         img(),
-        md(),
+        string({
+            include: "**/*.md",
+        }),
         babel({
             extensions,
             exclude: /node_modules/,
