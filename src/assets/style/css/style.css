@@ -1,0 +1,41 @@
+html {
+    background: #f6f4f2;
+    font-family: "PTsans";
+}
+
+#content {
+    padding: 10%
+}
+
+h1 {
+font-family: 'Raleway',
+sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+}
+
+#mayhem {
+    font-family: "Bungee";
+     font-size: 28px;
+}
+
+#pixel-up {
+
+       font-family: 'Montserrat',
+       sans-serif;
+     font-size: 28px;
+}
+
+#the-new-wild {
+    font-family: "Anton";
+    font-weight: 900;
+     font-size: 28px;
+}
+
+#adversary {
+   font-family: 'Raleway',
+   sans-serif;
+   font-weight: 800;
+   font-size: 28px;
+}
+

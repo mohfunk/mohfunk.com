@@ -52,3 +52,17 @@ yarn.lock
 public/assets/fonts/a*
 public/assets/fonts/B*
 public/assets/fonts/
+.prev/
+.cache/
+coverage/
+dist/
+!dist/index.html
+node_modules/
+*.log
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

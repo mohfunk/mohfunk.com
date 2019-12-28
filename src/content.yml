@@ -1,6 +1,14 @@
 home:
   title: mohfunk
   sub: Programmer and Game Developer
+  contact:
+    mail: mohfunk@pm.me
+    twitter: https://twitter.com/mohfunk
+    github: https://github.com/mohfunk
+  copyrights: Copyrights © 2020 Alhaytham
+  about:
+    - "# About"
+    - about page
 post:
   - id: "0"
     title: play
@@ -9,16 +17,17 @@ post:
       month: "06"
       day: "05"
     imag:
-      impa: assets/img/jpg/play.jpg
+      path: ../assets/img/jpg/play.jpg
       label: Pieter Bruegel the Elder's Children's Games 1560
-      copyrights: PD
+      copyrights: C0
       source: Wikimedia Commons
-      link: commons.wikimedia.org
+      url: https://commons.wikimedia.org
     body:
       - "I have always been frustrated with how Play is naively defined; for
         instance, a google search yields the following top result:"
-      - "> **Play:** *Noun.* Activity engaged in for enjoyment and recreation,
+      - "> **Play:**  *Noun.* Activity engaged in for enjoyment and recreation,
         especially by children*."
+      - <br>
       - Animals of all kinds seem to engage in Play; even Dinosaurs, the deadly,
         cold-blooded reptiles, had a playful side! It is not merely an activity
         for enjoyment or recreation. Many of the ideas I discuss here are
@@ -26,6 +35,8 @@ post:
         Huizinga](https://en.m.wikipedia.org/wiki/Johan_Huizinga) I subscribe to
         his school of thought as an appreciator of Play, and as a student of its
         craft.
+      - <br>
+      - <br>
       - "As the sole extant species of the genus Homo, we're disposed to pompous
         surmises of human divinity. Without a doubt, Man is the dominant animal
         on the planet; however, our primacy is newly acquired. For millions of
@@ -53,16 +64,18 @@ post:
         biological or a physical need; it is not a physiological phenomenon or a
         psychological reflex, even in its purest of forms. Many psychologists
         and scientists hypothesized biological functions for Play; some of which
-        include:"
-      - "* Play is"
-      - "  * \\- A result of a need for *relaxation.*"
-      - "  * \\- A discharge of abundant vital energy."
-      - "  * \\- A method by which young animals learn essential survival
-        skills."
-      - "  * \\- A *wish-fulfillment* activity."
-      - "  * \\- An activity that satisfies the natural need for dominance and
+        include the following: "
+      - <br>
+      - <br>
+      - Play is
+      - "- A result of a need for *relaxation.*"
+      - "- A discharge of abundant vital energy."
+      - "- A method by which young animals learn essential survival skills."
+      - "- A *wish-fulfillment* activity."
+      - "- An activity that satisfies the natural need for dominance and
         competition in a non-harmful environment."
       - "  "
+      - <br>
       - All of these hypotheses share common flaws, the inadequacy to encompass
         all instances of Play stands glaring,Huizinga concluded that the
         assumption that Play must serve a biological function is a fallacious
@@ -85,8 +98,10 @@ post:
         human behaviour. We inclined to designate our species as *Homo Faber*,
         Man, the Maker; although, not as misleading as *Sapiens*, it is an
         unseemly name for a ruthless destroyer. Besides, the use of *H. Faber*:"
+      - <br>
       - "> is a manifestation of man's innate being in nature, which represents
         the alienation from and objectification of nature."
+      - <br>
       - as the Italian philosopher Umberto Eco argued. Johan Huizinga suggested
         *Homo Ludens,* Man, the Player. Linguistically, however, the Latin word
         *Luden* carries more meaning than merely Play.
@@ -97,11 +112,11 @@ post:
       month: "11"
       day: "21"
     imag:
-      impa: assets/img/jpg/diffEngine.jpg
+      path: ../assets/img/jpg/diffEngine.jpg
       label: Babbage's Difference Engine
       copyrights: C
       source: Giles Moss
-      link: flickr.com/photos/mrgiles/325903759
+      url: https://flickr.com/photos/mrgiles/325903759
     body:
       - "A powerful language must provide the following 3 mechanisms to allow
         the formulation of complex ideas from simpler ones:"
@@ -133,11 +148,11 @@ post:
       month: "08"
       day: "29"
     imag:
-      impa: assets/img/jpg/mos.jpg
+      path: ../assets/img/jpg/mos.jpg
       label: Benito Mussolini 1940
       copyrights: PD
       source: Wikimedia Commons
-      link: commons.wikimedia.org
+      url: https://commons.wikimedia.org
     body:
       - وَإِذَا قِيلَ لَهُمْ لَا تُفْسِدُوا فِي الْأَرْضِ قَالُوا إِنَّمَا
         نَحْنُ مُصْلِحُونَ أَلَا إِنَّهُمْ هُمُ الْمُفْسِدُونَ وَلَٰكِن لَّا
@@ -151,11 +166,11 @@ work:
       month: "04"
       day: "30"
     imag:
-      impa: assets/img/gif/pixelup.gif
+      path: ../assets/img/gif/pixelup.gif
       label: null
       copyrights: null
       source: null
-      link: null
+      url: https://undefined
     body: []
   - id: "1"
     title: mayhem
@@ -164,11 +179,11 @@ work:
       month: "08"
       day: "04"
     imag:
-      impa: assets/img/gif/mayhem.gif
+      path: ../assets/img/gif/mayhem.gif
       label: null
       copyrights: null
       source: null
-      link: null
+      url: https://undefined
     body: []
   - id: "2"
     title: the new wild
@@ -177,11 +192,11 @@ work:
       month: "06"
       day: "30"
     imag:
-      impa: assets/img/gif/wt.gif
+      path: ../assets/img/gif/wt.gif
       label: null
       copyrights: null
       source: null
-      link: null
+      url: https://undefined
     body: []
   - id: "3"
     title: adversary
@@ -190,23 +205,9 @@ work:
       month: "12"
       day: "11"
     imag:
-      impa: assets/img/png/adv.png
+      path: ../assets/img/png/adv.png
       label: null
       copyrights: null
       source: null
-      link: null
-    body: []
-main:
-  - id: "0"
-    title: about
-    date:
-      year: "2019"
-      month: "12"
-      day: "11"
-    imag:
-      impa: assets/img/jpg/pic.jpg
-      label: off to quebec
-      copyrights: NC
-      source: Alhaytham
-      link: mohfunk.com
+      url: https://undefined
     body: []
