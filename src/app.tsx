@@ -7,6 +7,7 @@ import Footer from './components/Footer'
 // tslint:disable-next-line: import-name
 import {Post, PostBody} from './components/post'
 import { Info, Game, Blog } from './svg/icons'
+import useScript from './hooks/useScript';
 import reactDom from 'react-dom'
 const fetch_refs = (cont: ppost[], cate: string): postRef[] => {
   // tslint:disable-next-line: prefer-const
@@ -44,7 +45,12 @@ const Header = () => (
   </>
 )
 
-const About = (props: { path: string }) => <span dangerouslySetInnerHTML={PostBody(about)} />
+const About = (props: { path: string }) => {
+  const [loading, error] = useScript({ src: './log.js' })
+    if (loading) return <h3>Loading Stripe API...</h3>
+    if (error) return <h3>Failed to load Stripe API: {error.message}</h3>
+  return (<span dangerouslySetInnerHTML={PostBody(about)} />)
+}
 
 const App = (props: {children: JSX.Element[], path: string}) => (
   <>
