@@ -1,37 +1,36 @@
 import react, { useState } from 'react'
 import { Link, Router, createHistory } from '@reach/router'
-import content from './content.yml'
-import lodash from 'lodash'
-import { post } from './types'
+import contentYml from './content.yml'
+import { post, postRef, ppost, content } from './types'
+import Menu from "./components/Menu";
 import Footer from './components/Footer'
 // tslint:disable-next-line: import-name
 import {Post, PostBody} from './components/post'
 import { Info, Game, Blog } from './svg/icons'
 import reactDom from 'react-dom'
+const fetch_refs = (cont: ppost[], cate: string): postRef[] => {
+  // tslint:disable-next-line: prefer-const
+  let refs: postRef[] = []
+  // tslint:disable-next-line: prefer-const
+  cont.forEach((p: ppost) => {
+    refs.push({ id: p.id, title: p.title, date: p.date, url: `${p.title.split(' ').join('-')}` });
+  })
+  return refs;
+}
+import './assets/style/css/reset.css';
 
-const BlogMenu = (props: { path: string }) => (
-  <div>
-    {content.post.map((lm: post) => (
-      <h3 key={lm.id} id={lm.title.split(' ').join('-')}>
-        <Link to={`blog/${lm.title.split(' ').join('-')}`}>{lm.title}</Link>
-      </h3>
-    ))}
-    </div>
-)
-const GamesMenu = (props: { path: string }) => (
-  <div>
-    {content.work.map((lm: post) => (
-      <h3 key={lm.id} id={lm.title.split(' ').join('-')}>
-        <Link to={`${lm.title.split(' ').join('-')}`}>{lm.title}</Link>
-      </h3>
-    ))}
-  </div>
-)
+const blog: postRef[]  = fetch_refs(contentYml.post, "blog");
+const games: postRef[] = fetch_refs(contentYml.work, "games");
+const about: string = contentYml.home.about.join('\n');
+const copyrights: string = contentYml.home.copyrights;
 const Header = () => (
   <>
     <div id={'header'}>
       <nav id={'nav'}>
         <Link to={'/'}>
+          <h1>{contentYml.home.title}.com</h1>
+        </Link>
+        <Link to={'/blog'}>
           <Blog />
         </Link>
         <Link to={'/about'}>
@@ -44,34 +43,33 @@ const Header = () => (
     </div>
   </>
 )
-const About = (props: { path: string }) => (
-  <span dangerouslySetInnerHTML={PostBody(content.home.about.join('\n'))} />
-)
+
+const About = (props: { path: string }) => <span dangerouslySetInnerHTML={PostBody(about)} />
 
 const App = (props: {children: JSX.Element[], path: string}) => (
   <>
     <div id="app">
       <Header />
       {props.children}
-      <Footer statement={content.home.copyrights} />
+      <Footer statement={copyrights} />
     </div>
   </>
 )
-reactDom.render(
-  <Router>
-    <App path="/">
-      <BlogMenu path="/" />
-      <About path="/about" />
-      <GamesMenu path="/games" />
-      {content.work.map((lm: post) => (
-        // tslint:disable-next-line: jsx-key
-        <Post path={`games/${lm.title.split(' ').join('-')}`} info={lm} />
+const Index = () => (
+    <Router>
+      <App path="/">
+        <Menu path="/blog" data={blog} />
+        <About path="/about" />
+        <Menu path="/games" data={games} />
+      {contentYml.work.map((lm: post) => (
+        <Post key={lm.id} path={`games/${lm.title.split(' ').join('-')}`} info={lm} />
       ))}
-      {content.post.map((lm: post) => (
-        // tslint:disable-next-line: jsx-key
-        <Post path={`blog/${lm.title.split(' ').join('-')}`} info={lm} />
+      {contentYml.post.map((lm: post) => (
+        <Post key={lm.id} path={`blog/${lm.title.split(' ').join('-')}`} info={lm} />
       ))}
-    </App>
-  </Router>,
-  document.getElementById('root')
+      </App>
+  </Router>
 )
+  
+
+reactDom.render(<Index />, document.getElementById('root'));
