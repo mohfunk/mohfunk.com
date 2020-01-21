@@ -40,9 +40,9 @@ const init = () => {
 }
 
 export default {
-  input: 'src/index.tsx',
+  input: 'src/app.tsx',
   output: {
-    file: 'public/index.js',
+    file: 'public/app.js',
     format: 'iife',
   },
     plugins: [
