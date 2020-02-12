@@ -18,7 +18,7 @@ function draw() {
     push();
     noStroke();
     normalMaterial();
-    rotateZ(frameCount * 0.001);
+    rotateZ(frameCount * 0.01);
     rotateX(frameCount * 0.01);
     rotateY(frameCount * 0.01);
     box(80, 30 + abs((10 * sin(frameCount * 0.02))));
